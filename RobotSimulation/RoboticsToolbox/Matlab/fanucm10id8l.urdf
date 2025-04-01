@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="fanucm10id8l">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.016861 -0.041276 0.16931"
+        rpy="0 0 0" />
+      <mass
+        value="15.254" />
+      <inertia
+        ixx="0.24067"
+        ixy="0.030514"
+        ixz="0.0099975"
+        iyy="0.21025"
+        iyz="0.0072648"
+        izz="0.27177" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fanucm10id8l/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fanucm10id8l/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="shoulder_Link">
+    <inertial>
+      <origin
+        xyz="0.07269 0.01726 0.43269"
+        rpy="0 0 0" />
+      <mass
+        value="8.585" />
+      <inertia
+        ixx="0.077308"
+        ixy="-0.0072335"
+        ixz="-0.00098898"
+        iyy="0.072396"
+        iyz="-0.0046113"
+        izz="0.08259" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fanucm10id8l/meshes/shoulder_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.5 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fanucm10id8l/meshes/shoulder_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shoulder_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="shoulder_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="foreArm_Link">
+    <inertial>
+      <origin
+        xyz="-0.035167 -0.37895 -0.16151"
+        rpy="0 0 0" />
+      <mass
+        value="10.704" />
+      <inertia
+        ixx="0.92508"
+        ixy="-0.015905"
+        ixz="-0.0054129"
+        iyy="0.033965"
+        iyz="0.013461"
+        izz="0.92966" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fanucm10id8l/meshes/foreArm_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.5 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fanucm10id8l/meshes/foreArm_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="foreArm_joint"
+    type="revolute">
+    <origin
+      xyz="0.075 0 0.45"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="shoulder_Link" />
+    <child
+      link="foreArm_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="upperArm_Link">
+    <inertial>
+      <origin
+        xyz="0.12723 -0.10993 0.035224"
+        rpy="0 0 0" />
+      <mass
+        value="9.6767" />
+      <inertia
+        ixx="0.13607"
+        ixy="0.054745"
+        ixz="-0.0051101"
+        iyy="0.11819"
+        iyz="-0.0025992"
+        izz="0.15463" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fanucm10id8l/meshes/upperArm_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.5 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fanucm10id8l/meshes/upperArm_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="upperArm_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.84 0"
+      rpy="0 0 0" />
+    <parent
+      link="foreArm_Link" />
+    <child
+      link="upperArm_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="wrist1_Link">
+    <inertial>
+      <origin
+        xyz="0.00063267 -0.027745 0.65653"
+        rpy="0 0 0" />
+      <mass
+        value="9.117" />
+      <inertia
+        ixx="0.50513"
+        ixy="0.00019721"
+        ixz="-0.00065851"
+        iyy="0.49564"
+        iyz="0.059254"
+        izz="0.027305" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fanucm10id8l/meshes/wrist1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fanucm10id8l/meshes/wrist1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wrist1_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.195 0"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="upperArm_Link" />
+    <child
+      link="wrist1_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="wrist2_Link">
+    <inertial>
+      <origin
+        xyz="4.7555E-08 -0.0249 0.021401"
+        rpy="0 0 0" />
+      <mass
+        value="0.36782" />
+      <inertia
+        ixx="0.00071072"
+        ixy="-9.4225E-10"
+        ixz="-8.264E-11"
+        iyy="0.00067199"
+        iyz="-0.00019921"
+        izz="0.00069259" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fanucm10id8l/meshes/wrist2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.5 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fanucm10id8l/meshes/wrist2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wrist2_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 1.1"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="wrist1_Link" />
+    <child
+      link="wrist2_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="wrist3_Link">
+    <inertial>
+      <origin
+        xyz="0 3.1612E-15 0.060264"
+        rpy="0 0 0" />
+      <mass
+        value="0.034405" />
+      <inertia
+        ixx="2.1318E-05"
+        ixy="-5.6741E-22"
+        ixz="3.5572E-20"
+        iyy="2.1153E-05"
+        iyz="3.684E-20"
+        izz="3.4436E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fanucm10id8l/meshes/wrist3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0.5 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fanucm10id8l/meshes/wrist3_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wrist3_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="1.5708 0 0" />
+    <parent
+      link="wrist2_Link" />
+    <child
+      link="wrist3_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+</robot>
